@@ -992,8 +992,18 @@ body.menu-open .menu-row:nth-child(5) { transition-delay: .28s; }
     margin: 0 auto;
   }
 
+  #s-home {
+    --hero-photo-h: calc(clamp(120px, 34vw, 180px) * 4 / 3);
+    padding-bottom: calc(var(--hero-photo-h) + 24px);
+  }
+  #hero-tagline {
+    margin-top: 20px;
+  }
   #hero-photo-wrap {
-    width: clamp(150px, 34vw, 260px);
+    position: absolute;
+    bottom: 0;
+    right: 48px;
+    width: clamp(120px, 34vw, 180px);
   }
 
   #contact-footer {
