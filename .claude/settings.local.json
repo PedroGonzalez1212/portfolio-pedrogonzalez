@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-Command chromium-cli -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Command python -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Command npx -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Command node -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Command npm -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Process python -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 8080 -ErrorAction SilentlyContinue)",
+      "PowerShell(python -m http.server 8080)",
+      "PowerShell(Start-Process python -ArgumentList \"-m\",\"http.server\",\"8080\" -WorkingDirectory \"c:\\\\Users\\\\pedro\\\\OneDrive\\\\Desktop\\\\portfolio-pedro-gonzalez\" -WindowStyle Hidden; Start-Sleep -Seconds 2; try { \\(Invoke-WebRequest -Uri http://localhost:8080 -UseBasicParsing\\).StatusCode } catch { $_.Exception.Message })",
+      "PowerShell(Get-Process python -ErrorAction SilentlyContinue; \\(Get-Command python -ErrorAction SilentlyContinue\\).Source; \\(Get-Command py -ErrorAction SilentlyContinue\\).Source)",
+      "PowerShell(python --version 2>&1)",
+      "PowerShell(py --version 2>&1)",
+      "PowerShell(Get-Process msedge -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Force -Confirm:$false)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 8899 -ErrorAction SilentlyContinue)",
+      "PowerShell(python -m http.server 8899)",
+      "PowerShell(python -c \"import fitz; print\\('fitz ok'\\)\" 2>&1)",
+      "PowerShell(python -c \"import pdf2image; print\\('pdf2image ok'\\)\" 2>&1)",
+      "PowerShell(pip show pymupdf 2>&1)"
+    ]
+  }
+}

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pedro González — Diseño &amp; Desarrollo Web</title>
+<meta name="description" content="Diseño y desarrollo de sitios web completos — de la idea al producto funcionando.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header id="nav">
+  <div id="nav-name">PEDRO GONZÁLEZ</div>
+  <div id="nav-controls">
+    <button id="theme-toggle" type="button">LIGHT</button>
+    <button id="menu-toggle" type="button">MENÚ</button>
+  </div>
+</header>
+
+<div id="menu-overlay">
+  <div id="menu-intro">
+    <div id="menu-intro-label">Intro</div>
+    <div id="menu-intro-title">Home</div>
+  </div>
+  <button id="menu-close" type="button">CERRAR</button>
+  <nav id="menu-list">
+    <a class="menu-row" data-target="s-home"><span class="menu-num">01</span><span class="menu-label">Home</span></a>
+    <a class="menu-row" data-target="s-services"><span class="menu-num">02</span><span class="menu-label">Services</span></a>
+    <a class="menu-row" data-target="s-projects"><span class="menu-num">03</span><span class="menu-label">Projects</span></a>
+    <a class="menu-row" data-target="s-about"><span class="menu-num">04</span><span class="menu-label">About Me</span></a>
+    <a class="menu-row" data-target="s-contact"><span class="menu-num">05</span><span class="menu-label">Contact</span></a>
+  </nav>
+  <div id="menu-footer">
+    <span>pedrogonzalez20022@gmail.com</span>
+    <span>Argentina</span>
+  </div>
+</div>
+
+<main>
+
+  <section id="s-home">
+    <h1>PEDRO<br>GONZÁLEZ</h1>
+    <div id="hero-photo-wrap">
+      <img id="hero-photo" src="assets/pedro-hero-photo-2.png" alt="Foto de Pedro González" loading="lazy">
+      <div id="hero-photo-fade"></div>
+      <div id="hero-photo-vignette"></div>
+    </div>
+    <p id="hero-tagline">Diseño y desarrollo sitios web completos — de la idea al producto funcionando.</p>
+    <div id="scroll-hint"><span>SCROLL</span></div>
+  </section>
+
+  <section id="s-services">
+    <div class="section-tag-row">
+      <span class="section-tag">SERVICES</span>
+      <div class="section-tag-line"></div>
+    </div>
+    <div id="services-layout">
+      <div id="services-number-col">
+        <div id="services-number-sticky">
+          <span id="services-number">01</span>
+        </div>
+      </div>
+      <div id="services-content-col">
+
+        <div class="service-block" data-svc="0">
+          <div class="service-divider"><div class="line"></div></div>
+          <h2>Diseño de Producto</h2>
+          <div class="service-paragraphs">
+            <p>La mayoría de mis diseños no son solo estética: son sistemas de diseño lógicos y escalables, pensados específicamente para web y aplicaciones. Con foco fuerte en diseño UI y pensamiento sistémico, busco crear elementos y módulos responsivos, flexibles y, sobre todo, funcionales y performantes.</p>
+            <p>Creo firmemente que el UI tiene un impacto directo en tu marca y en tus soluciones web — ahí es donde empieza mi interés real: unir todas las piezas clave para que cada decisión tenga un valor concreto.</p>
+          </div>
+          <div class="service-subitems">
+            <div class="subitem"><span class="subitem-num">01</span><span class="subitem-label">UX/UI Design</span></div>
+            <div class="subitem"><span class="subitem-num">02</span><span class="subitem-label">Diseño Web Responsivo</span></div>
+            <div class="subitem"><span class="subitem-num">03</span><span class="subitem-label">Sistemas de Diseño</span></div>
+            <div class="subitem"><span class="subitem-num">04</span><span class="subitem-label">Diseño de Apps</span></div>
+            <div class="subitem"><span class="subitem-num">05</span><span class="subitem-label">Prototipado</span></div>
+            <div class="subitem"><span class="subitem-num">06</span><span class="subitem-label">Interacciones</span></div>
+          </div>
+        </div>
+
+        <div class="service-block" data-svc="1">
+          <div class="service-divider"><div class="line"></div></div>
+          <h2>Desarrollo Web</h2>
+          <div class="service-paragraphs">
+            <p>Traducir el diseño en experiencias web dinámicas y funcionales es donde más disfruto trabajar. Me apasiona transformar sistemas de diseño en entornos web reales, escribiendo código a medida (HTML, CSS y JS) para crear sitios sostenibles, con componentes flexibles y responsivos.</p>
+            <p>Ya sea construyendo soluciones animadas o armando módulos reutilizables, mi objetivo es desarrollar sitios que no solo se vean bien, sino que estén construidos para durar. Se trata de unir creatividad y lógica para lograr experiencias fluidas que se sientan frescas y se adapten a cualquier dispositivo.</p>
+          </div>
+          <div class="service-subitems">
+            <div class="subitem"><span class="subitem-num">01</span><span class="subitem-label">Landing Pages</span></div>
+            <div class="subitem"><span class="subitem-num">02</span><span class="subitem-label">Sistemas de Diseño (Figma → Código)</span></div>
+            <div class="subitem"><span class="subitem-num">03</span><span class="subitem-label">Soluciones web animadas</span></div>
+          </div>
+        </div>
+
+        <div class="service-block" data-svc="2">
+          <div class="service-divider"><div class="line"></div></div>
+          <h2>Dirección Creativa</h2>
+          <div class="service-paragraphs">
+            <p>El diseño UI no es solo botones y componentes — es reflejar la esencia de una marca en plataformas digitales funcionales, reforzando su autenticidad en cada punto de contacto con el usuario.</p>
+            <p>Me gusta ir más allá de lo convencional, transformando el UI en una herramienta que lleva la marca a otro nivel.</p>
+            <p>Puedo ser la persona indicada para vos no solo por el diseño UI o el desarrollo, sino porque pienso en función de la visión de marca y le doy propósito a cada pixel.</p>
+          </div>
+          <div class="service-subitems">
+            <div class="subitem"><span class="subitem-num">01</span><span class="subitem-label">Brand Design</span></div>
+            <div class="subitem"><span class="subitem-num">02</span><span class="subitem-label">Moodboards</span></div>
+            <div class="subitem"><span class="subitem-num">03</span><span class="subitem-label">Conceptos de Visión</span></div>
+            <div class="subitem"><span class="subitem-num">04</span><span class="subitem-label">Guías de Estilo</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="s-projects-intro">
+    <div id="projects-intro-sticky">
+      <div id="work-tag-wrap">
+        <span class="section-tag" id="work-tag">WORKS</span>
+        <div class="section-tag-line" id="work-tag-line"></div>
+      </div>
+      <h2 id="projects-title">PROJECTS</h2>
+    </div>
+  </section>
+
+  <section id="s-projects">
+    <div id="projects-grid">
+
+      <a class="project-card" href="https://valecostilla.com/" target="_blank" rel="noopener" style="margin-top:0;">
+        <div class="card-inner">
+          <div class="card-face card-front">
+            <div class="card-logo" style="background:#0A0A0A;">
+              <img src="assets/logo-valen.webp" alt="DJ Valen Costilla" loading="lazy">
+            </div>
+            <div class="card-info card-info-themed">
+              <h3>DJ Valen Costilla</h3>
+              <p class="card-type">Landing Page</p>
+              <p class="card-subtitle">Dirección Creativa — Diseño y Desarrollo Web</p>
+            </div>
+          </div>
+          <div class="card-face card-back">
+            <iframe src="https://valecostilla.com/" title="DJ Valen Costilla" loading="lazy"></iframe>
+          </div>
+        </div>
+      </a>
+
+      <a class="project-card no-flip" href="https://dglimpieza.com.ar/" target="_blank" rel="noopener" style="margin-top:62%;">
+        <div class="card-inner card-inner-static">
+          <div class="card-face card-front">
+            <div class="card-logo" style="background:#F5F3EF;">
+              <img src="assets/logo-gauss.png" alt="DG Limpieza" loading="lazy">
+            </div>
+            <div class="card-info card-info-themed">
+              <h3>DG Limpieza</h3>
+              <p class="card-type">E-commerce — Sistema de Gestión de Stock</p>
+              <p class="card-subtitle">Diseño y Desarrollo Web — Desarrollo de Software</p>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://kikines.vercel.app/" target="_blank" rel="noopener" style="margin-top:0;">
+        <div class="card-inner">
+          <div class="card-face card-front">
+            <div class="card-logo" style="background:#0A0A0A;">
+              <img src="assets/logo-kikines.webp" alt="Kikines" loading="lazy">
+            </div>
+            <div class="card-info card-info-themed">
+              <h3>Kikines</h3>
+              <p class="card-type">Landing Page — Sistema de Gestión</p>
+              <p class="card-subtitle">Dirección Creativa — Diseño y Desarrollo Web — Desarrollo de Software</p>
+            </div>
+          </div>
+          <div class="card-face card-back">
+            <iframe src="https://kikines.vercel.app/" title="Kikines" loading="lazy"></iframe>
+          </div>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://bolognatravel.tur.ar/" target="_blank" rel="noopener" style="margin-top:62%;">
+        <div class="card-inner">
+          <div class="card-face card-front">
+            <div class="card-logo" style="background:#F5F3EF;">
+              <img src="assets/logo-bologna.webp" alt="Bologna Travel" loading="lazy">
+            </div>
+            <div class="card-info card-info-themed">
+              <h3>Bologna Travel</h3>
+              <p class="card-type">Landing Page — Sistema de Gestión</p>
+              <p class="card-subtitle">Diseño y Desarrollo Web — Desarrollo de Software</p>
+            </div>
+          </div>
+          <div class="card-face card-back">
+            <iframe src="https://bolognatravel.tur.ar/" title="Bologna Travel" loading="lazy"></iframe>
+          </div>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://fundacionpraxis.org.ar/" target="_blank" rel="noopener" style="margin-top:0;">
+        <div class="card-inner">
+          <div class="card-face card-front">
+            <div class="card-logo" style="background:#0A0A0A;">
+              <img src="assets/logo-praxis.webp" alt="Fundación Praxis" loading="lazy">
+            </div>
+            <div class="card-info card-info-themed">
+              <h3>Fundación Praxis</h3>
+              <p class="card-type">Web Institucional</p>
+              <p class="card-subtitle">Dirección Creativa — Diseño y Desarrollo Web</p>
+            </div>
+          </div>
+          <div class="card-face card-back">
+            <iframe src="https://fundacionpraxis.org.ar/" title="Fundación Praxis" loading="lazy"></iframe>
+          </div>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://apolosocialclub.com/" target="_blank" rel="noopener" style="margin-top:62%;">
+        <div class="card-inner">
+          <div class="card-face card-front">
+            <div class="card-logo" style="background:#0A0A0A;">
+              <img src="assets/logo-apolo.webp" alt="Apolo Producciones" loading="lazy">
+            </div>
+            <div class="card-info card-info-themed">
+              <h3>Apolo Producciones</h3>
+              <p class="card-type">Landing Page</p>
+              <p class="card-subtitle">Dirección Creativa — Diseño y Desarrollo Web</p>
+            </div>
+          </div>
+          <div class="card-face card-back">
+            <iframe src="https://apolosocialclub.com/" title="Apolo Producciones" loading="lazy"></iframe>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section id="s-about">
+    <div class="section-tag-row">
+      <span class="section-tag">ABOUT ME</span>
+      <div class="section-tag-line"></div>
+    </div>
+    <div id="about-content">
+      <div id="about-text">
+        <p id="about-lead">Soy desarrollador web y diseñador UX/UI, y no divido el proceso en "el que diseña" y "el que programa" — lo hago yo, de punta a punta. Eso cambia el resultado: las decisiones de diseño ya nacen pensando en cómo se van a construir, y el código no traiciona la idea original en el camino.</p>
+        <p>Trabajo con HTML, CSS y JavaScript para construir interfaces que funcionan tan bien como se ven, y con Python cuando el proyecto lo necesita del otro lado. Pero antes de abrir el editor, lo que me interesa es entender el problema real: quién va a usar esto, qué necesita lograr, y qué es lo mínimo necesario para que funcione bien.</p>
+        <p>Sigo aprendiendo todo el tiempo — el desarrollo web no se queda quieto, y yo tampoco. Si trabajás conmigo, no coordinás a un diseñador y a un desarrollador por separado ni traducís entre los dos: hay una sola visión, de la idea al sitio funcionando.</p>
+      </div>
+      <div id="about-photo-wrap">
+        <img id="about-photo" src="assets/pedro-about-photo-cutout.png" alt="Foto de Pedro González" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="s-contact">
+    <div class="section-tag-row">
+      <span class="section-tag">CONTACT</span>
+      <div class="section-tag-line"></div>
+    </div>
+    <h2 id="contact-heading">Contactame</h2>
+    <div id="contact-divider"></div>
+    <div id="contact-footer">
+      <div id="contact-copy">
+        <span>© 2026 Pedro González.<br>Todos los derechos reservados.</span>
+      </div>
+      <div id="contact-links">
+        <div class="contact-col">
+          <span class="contact-col-label">MESSAGE</span>
+          <a href="mailto:pedrogonzalez20022@gmail.com">pedrogonzalez20022@gmail.com</a>
+          <a href="tel:+543513537171">3513537171</a>
+        </div>
+        <div class="contact-col">
+          <span class="contact-col-label">SOCIAL</span>
+          <a href="https://www.linkedin.com/in/pedro-gonzalez-448b94254/" target="_blank" rel="noopener" class="underline-link">LinkedIn</a>
+          <a href="https://www.instagram.com/pedro.gonzalezz1/" target="_blank" rel="noopener" class="underline-link">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
