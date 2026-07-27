@@ -116,7 +116,7 @@ a {
 
 /* ===== Nav ===== */
 #nav {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -242,10 +242,15 @@ body.menu-open #menu-overlay {
   display: flex;
   flex-direction: column;
   height: calc(100vh - 240px);
+  height: calc(100svh - 240px);
+  max-height: 100%;
+  overflow-y: auto;
 }
 
 .menu-row {
   flex-grow: 2;
+  flex-shrink: 0;
+  min-height: fit-content;
   border-bottom: 1px solid var(--hero-border);
   text-decoration: none;
   cursor: pointer;
@@ -322,7 +327,7 @@ body.menu-open .menu-row:nth-child(5) { transition-delay: .28s; }
   min-height: 100svh;
   background: var(--hero-bg);
   position: relative;
-  padding: 44px 48px;
+  padding: 116px 48px 44px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -747,7 +752,7 @@ body.menu-open .menu-row:nth-child(5) { transition-delay: .28s; }
   display: flex;
   gap: 64px;
   align-items: flex-start;
-  padding: 64px 48px 120px;
+  padding: 64px 48px 48px;
   max-width: 1300px;
   margin: 0 auto;
   opacity: 0;
@@ -803,7 +808,7 @@ body.menu-open .menu-row:nth-child(5) { transition-delay: .28s; }
 #s-contact {
   position: relative;
   background: var(--contact-bg);
-  padding: 44px 48px 56px;
+  padding: 0 0 56px;
   transition: background .4s ease;
 }
 
@@ -814,6 +819,7 @@ body.menu-open .menu-row:nth-child(5) { transition-delay: .28s; }
   font-weight: 400;
   letter-spacing: 0.01em;
   margin: 60px 0 60px;
+  padding: 0 48px;
   line-height: 0.9;
   opacity: 0;
   transform: translateY(24px);
@@ -828,8 +834,7 @@ body.menu-open .menu-row:nth-child(5) { transition-delay: .28s; }
 #contact-divider {
   height: 1px;
   background: var(--contact-border-mid);
-  width: 100%;
-  margin-bottom: 20px;
+  margin: 0 48px 20px;
 }
 
 #contact-footer {
@@ -838,6 +843,7 @@ body.menu-open .menu-row:nth-child(5) { transition-delay: .28s; }
   align-items: flex-start;
   gap: 96px;
   flex-wrap: wrap;
+  padding: 0 48px;
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 1.6s cubic-bezier(.22, 1, .36, 1) .2s, transform 1.6s cubic-bezier(.22, 1, .36, 1) .2s;
@@ -983,11 +989,22 @@ body.menu-open .menu-row:nth-child(5) { transition-delay: .28s; }
   }
   #about-photo-wrap {
     width: clamp(160px, 40vw, 220px);
-    margin-left: 0;
+    margin: 0 auto;
   }
 
   #hero-photo-wrap {
     width: clamp(150px, 34vw, 260px);
+  }
+
+  #contact-footer {
+    flex-direction: column;
+    gap: 40px;
+  }
+  #contact-links {
+    order: 1;
+  }
+  #contact-copy {
+    order: 2;
   }
 
   .menu-row:nth-child(1) { margin-left: 0; }
@@ -995,14 +1012,33 @@ body.menu-open .menu-row:nth-child(5) { transition-delay: .28s; }
   .menu-row:nth-child(3) { margin-left: 8vw; }
   .menu-row:nth-child(4) { margin-left: 12vw; }
   .menu-row:nth-child(5) { margin-left: 16vw; }
+
+  #menu-intro { top: 28px; }
+  #menu-close { top: 32px; }
+  #menu-list {
+    padding: 84px 32px 0;
+    height: calc(100vh - 180px);
+    height: calc(100svh - 180px);
+  }
+  .menu-row {
+    padding-top: 16px;
+  }
+  #menu-footer {
+    bottom: 24px;
+  }
 }
 
 @media (max-width: 560px) {
   .section-tag-row,
   #s-home,
-  #s-contact {
+  #contact-heading,
+  #contact-footer {
     padding-left: 24px;
     padding-right: 24px;
+  }
+  #contact-divider {
+    margin-left: 24px;
+    margin-right: 24px;
   }
   #hero-photo-wrap {
     right: 24px;
@@ -1013,6 +1049,47 @@ body.menu-open .menu-row:nth-child(5) { transition-delay: .28s; }
     left: 24px;
     right: 24px;
   }
-  #menu-intro { left: 24px; }
-  #menu-close { right: 24px; }
+  #menu-intro { left: 24px; top: 20px; }
+  #menu-close { right: 24px; top: 24px; }
+  #menu-intro-title {
+    font-size: clamp(20px, 6vw, 26px);
+  }
+  #menu-list {
+    padding: 68px 24px 0;
+    height: calc(100vh - 130px);
+    height: calc(100svh - 130px);
+  }
+  .menu-row {
+    padding-top: 10px;
+  }
+  .menu-label {
+    font-size: clamp(20px, 6vw, 28px);
+  }
+  #menu-footer {
+    bottom: 16px;
+    font-size: 12px;
+  }
+}
+
+@media (max-height: 600px) {
+  #menu-intro { top: 14px; }
+  #menu-close { top: 18px; }
+  #menu-list {
+    padding: 52px 32px 0;
+    height: calc(100vh - 90px);
+    height: calc(100svh - 90px);
+  }
+  .menu-row {
+    padding-top: 6px;
+  }
+  .menu-num {
+    font-size: 12px;
+  }
+  .menu-label {
+    font-size: clamp(18px, 4.5vw, 26px);
+  }
+  #menu-footer {
+    bottom: 10px;
+    font-size: 11px;
+  }
 }
