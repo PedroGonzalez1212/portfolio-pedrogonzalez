@@ -54,7 +54,7 @@
 
   function updateActiveService() {
     if (!serviceBlocks.length) return;
-    const line = 120;
+    const line = 170;
     let newIndex = 0;
     serviceBlocks.forEach((el, i) => {
       const rect = el.getBoundingClientRect();
@@ -100,9 +100,18 @@
     updateProjectsIntro();
   }
 
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll, { passive: true });
-  setInterval(onScroll, 100);
+  let scrollTicking = false;
+  function requestScrollUpdate() {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(() => {
+      onScroll();
+      scrollTicking = false;
+    });
+  }
+
+  window.addEventListener('scroll', requestScrollUpdate, { passive: true });
+  window.addEventListener('resize', requestScrollUpdate, { passive: true });
   onScroll();
 
   /* ---------- Fade-ins on scroll into view ---------- */
