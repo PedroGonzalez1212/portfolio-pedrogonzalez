@@ -1,0 +1,12 @@
+{
+  "name": "Pedro González — Desarrollador Web & Diseñador UX/UI",
+  "short_name": "Pedro González",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0A0A0A",
+  "icons": [
+    { "src": "assets/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "assets/apple-touch-icon.png", "type": "image/png", "sizes": "180x180" }
+  ]
+}

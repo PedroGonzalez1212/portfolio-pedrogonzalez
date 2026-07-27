@@ -3,13 +3,88 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pedro González — Diseño &amp; Desarrollo Web</title>
-<meta name="description" content="Diseño y desarrollo de sitios web completos — de la idea al producto funcionando.">
-<link rel="icon" type="image/png" href="assets/favicon-pedrogonzalez.png">
+<title>Pedro González — Desarrollador Web &amp; Diseñador UX/UI</title>
+<meta name="description" content="Pedro González, desarrollador web y diseñador UX/UI. Diseño y desarrollo sitios web completos a medida — de la idea al producto funcionando.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Pedro González">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="canonical" href="https://pedrogonzalez.com.ar/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pedrogonzalez.com.ar/">
+<meta property="og:site_name" content="Pedro González">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="Pedro González — Desarrollador Web & Diseñador UX/UI">
+<meta property="og:description" content="Pedro González, desarrollador web y diseñador UX/UI. Diseño y desarrollo sitios web completos a medida — de la idea al producto funcionando.">
+<meta property="og:image" content="https://pedrogonzalez.com.ar/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pedro González — Desarrollador Web y Diseñador UX/UI">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pedro González — Desarrollador Web & Diseñador UX/UI">
+<meta name="twitter:description" content="Pedro González, desarrollador web y diseñador UX/UI. Diseño y desarrollo sitios web completos a medida — de la idea al producto funcionando.">
+<meta name="twitter:image" content="https://pedrogonzalez.com.ar/assets/og-image.png">
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="alternate icon" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Pedro González",
+  "url": "https://pedrogonzalez.com.ar/",
+  "image": "https://pedrogonzalez.com.ar/assets/og-image.png",
+  "description": "Pedro González, desarrollador web y diseñador UX/UI. Diseño y desarrollo sitios web completos a medida — de la idea al producto funcionando.",
+  "email": "pedrogonzalez20022@gmail.com",
+  "telephone": "+543513537171",
+  "areaServed": "AR",
+  "founder": {
+    "@type": "Person",
+    "name": "Pedro González",
+    "jobTitle": "Desarrollador Web y Diseñador UX/UI",
+    "sameAs": [
+      "https://www.linkedin.com/in/pedro-gonzalez-448b94254/",
+      "https://www.instagram.com/pedro.gonzalezz1/"
+    ]
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Diseño de Producto"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Desarrollo Web"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Dirección Creativa"
+        }
+      }
+    ]
+  }
+}
+</script>
 </head>
 <body>
 
@@ -28,11 +103,11 @@
   </div>
   <button id="menu-close" type="button">CERRAR</button>
   <nav id="menu-list">
-    <a class="menu-row" data-target="s-home"><span class="menu-num">01</span><span class="menu-label">Home</span></a>
-    <a class="menu-row" data-target="s-services"><span class="menu-num">02</span><span class="menu-label">Services</span></a>
-    <a class="menu-row" data-target="s-projects"><span class="menu-num">03</span><span class="menu-label">Projects</span></a>
-    <a class="menu-row" data-target="s-about"><span class="menu-num">04</span><span class="menu-label">About Me</span></a>
-    <a class="menu-row" data-target="s-contact"><span class="menu-num">05</span><span class="menu-label">Contact</span></a>
+    <a class="menu-row" href="#s-home" data-target="s-home"><span class="menu-num">01</span><span class="menu-label">Home</span></a>
+    <a class="menu-row" href="#s-services" data-target="s-services"><span class="menu-num">02</span><span class="menu-label">Services</span></a>
+    <a class="menu-row" href="#s-projects" data-target="s-projects"><span class="menu-num">03</span><span class="menu-label">Projects</span></a>
+    <a class="menu-row" href="#s-about" data-target="s-about"><span class="menu-num">04</span><span class="menu-label">About Me</span></a>
+    <a class="menu-row" href="#s-contact" data-target="s-contact"><span class="menu-num">05</span><span class="menu-label">Contact</span></a>
   </nav>
   <div id="menu-footer">
     <span>pedrogonzalez20022@gmail.com</span>
@@ -45,15 +120,15 @@
   <section id="s-home">
     <h1>PEDRO<br>GONZALEZ</h1>
     <div id="hero-photo-wrap">
-      <img id="hero-photo" src="assets/pedro-hero-photo-2.png" alt="Foto de Pedro González" loading="lazy">
+      <img id="hero-photo" src="assets/pedro-hero-photo-2.webp" alt="Pedro González, desarrollador web y diseñador UX/UI" fetchpriority="high">
       <div id="hero-photo-fade"></div>
       <div id="hero-photo-vignette"></div>
     </div>
     <p id="hero-tagline">Diseño y desarrollo sitios web completos — de la idea al producto funcionando.</p>
-    <div id="scroll-hint"><span>SCROLL</span></div>
   </section>
 
   <section id="s-services">
+    <h2 class="visually-hidden">Servicios</h2>
     <div class="section-tag-row">
       <span class="section-tag">SERVICES</span>
       <div class="section-tag-line"></div>
@@ -68,49 +143,49 @@
 
         <div class="service-block" data-svc="0">
           <div class="service-divider"><div class="line"></div></div>
-          <h2>Diseño de producto</h2>
+          <h3>Diseño de producto</h3>
           <div class="service-paragraphs">
             <p>La mayoría de mis diseños no son solo estética: son sistemas de diseño lógicos y escalables, pensados específicamente para web y aplicaciones. Con foco fuerte en diseño UI y pensamiento sistémico, busco crear elementos y módulos responsivos, flexibles y, sobre todo, funcionales y performantes.</p>
             <p>Creo firmemente que el UI tiene un impacto directo en tu marca y en tus soluciones web — ahí es donde empieza mi interés real: unir todas las piezas clave para que cada decisión tenga un valor concreto.</p>
           </div>
-          <div class="service-subitems">
-            <div class="subitem"><span class="subitem-num">01</span><span class="subitem-label">UX/UI Design</span></div>
-            <div class="subitem"><span class="subitem-num">02</span><span class="subitem-label">Diseño Web Responsivo</span></div>
-            <div class="subitem"><span class="subitem-num">03</span><span class="subitem-label">Sistemas de Diseño</span></div>
-            <div class="subitem"><span class="subitem-num">04</span><span class="subitem-label">Diseño de Apps</span></div>
-            <div class="subitem"><span class="subitem-num">05</span><span class="subitem-label">Prototipado</span></div>
-            <div class="subitem"><span class="subitem-num">06</span><span class="subitem-label">Interacciones</span></div>
-          </div>
+          <ol class="service-subitems">
+            <li class="subitem"><span class="subitem-num">01</span><span class="subitem-label">UX/UI Design</span></li>
+            <li class="subitem"><span class="subitem-num">02</span><span class="subitem-label">Diseño Web Responsivo</span></li>
+            <li class="subitem"><span class="subitem-num">03</span><span class="subitem-label">Sistemas de Diseño</span></li>
+            <li class="subitem"><span class="subitem-num">04</span><span class="subitem-label">Diseño de Apps</span></li>
+            <li class="subitem"><span class="subitem-num">05</span><span class="subitem-label">Prototipado</span></li>
+            <li class="subitem"><span class="subitem-num">06</span><span class="subitem-label">Interacciones</span></li>
+          </ol>
         </div>
 
         <div class="service-block" data-svc="1">
           <div class="service-divider"><div class="line"></div></div>
-          <h2>Desarrollo web</h2>
+          <h3>Desarrollo web</h3>
           <div class="service-paragraphs">
             <p>Traducir el diseño en experiencias web dinámicas y funcionales es donde más disfruto trabajar. Me apasiona transformar sistemas de diseño en entornos web reales, escribiendo código a medida (HTML, CSS y JS) para crear sitios sostenibles, con componentes flexibles y responsivos.</p>
             <p>Ya sea construyendo soluciones animadas o armando módulos reutilizables, mi objetivo es desarrollar sitios que no solo se vean bien, sino que estén construidos para durar. Se trata de unir creatividad y lógica para lograr experiencias fluidas que se sientan frescas y se adapten a cualquier dispositivo.</p>
           </div>
-          <div class="service-subitems">
-            <div class="subitem"><span class="subitem-num">01</span><span class="subitem-label">Landing Pages</span></div>
-            <div class="subitem"><span class="subitem-num">02</span><span class="subitem-label">Sistemas de Diseño (Figma → Código)</span></div>
-            <div class="subitem"><span class="subitem-num">03</span><span class="subitem-label">Soluciones web animadas</span></div>
-          </div>
+          <ol class="service-subitems">
+            <li class="subitem"><span class="subitem-num">01</span><span class="subitem-label">Landing Pages</span></li>
+            <li class="subitem"><span class="subitem-num">02</span><span class="subitem-label">Sistemas de Diseño (Figma → Código)</span></li>
+            <li class="subitem"><span class="subitem-num">03</span><span class="subitem-label">Soluciones web animadas</span></li>
+          </ol>
         </div>
 
         <div class="service-block" data-svc="2">
           <div class="service-divider"><div class="line"></div></div>
-          <h2>Dirección creativa</h2>
+          <h3>Dirección creativa</h3>
           <div class="service-paragraphs">
             <p>El diseño UI no es solo botones y componentes — es reflejar la esencia de una marca en plataformas digitales funcionales, reforzando su autenticidad en cada punto de contacto con el usuario.</p>
             <p>Me gusta ir más allá de lo convencional, transformando el UI en una herramienta que lleva la marca a otro nivel.</p>
             <p>Puedo ser la persona indicada para vos no solo por el diseño UI o el desarrollo, sino porque pienso en función de la visión de marca y le doy propósito a cada pixel.</p>
           </div>
-          <div class="service-subitems">
-            <div class="subitem"><span class="subitem-num">01</span><span class="subitem-label">Brand Design</span></div>
-            <div class="subitem"><span class="subitem-num">02</span><span class="subitem-label">Moodboards</span></div>
-            <div class="subitem"><span class="subitem-num">03</span><span class="subitem-label">Conceptos de Visión</span></div>
-            <div class="subitem"><span class="subitem-num">04</span><span class="subitem-label">Guías de Estilo</span></div>
-          </div>
+          <ol class="service-subitems">
+            <li class="subitem"><span class="subitem-num">01</span><span class="subitem-label">Brand Design</span></li>
+            <li class="subitem"><span class="subitem-num">02</span><span class="subitem-label">Moodboards</span></li>
+            <li class="subitem"><span class="subitem-num">03</span><span class="subitem-label">Conceptos de Visión</span></li>
+            <li class="subitem"><span class="subitem-num">04</span><span class="subitem-label">Guías de Estilo</span></li>
+          </ol>
         </div>
 
       </div>
@@ -143,7 +218,7 @@
             </div>
           </div>
           <div class="card-face card-back">
-            <iframe src="https://valecostilla.com/" title="DJ Valen Costilla" loading="lazy"></iframe>
+            <iframe data-src="https://valecostilla.com/" title="DJ Valen Costilla" loading="lazy" tabindex="-1" sandbox="allow-scripts allow-same-origin"></iframe>
           </div>
         </div>
       </a>
@@ -152,7 +227,7 @@
         <div class="card-inner card-inner-static">
           <div class="card-face card-front">
             <div class="card-logo" style="background:#F5F3EF;">
-              <img src="assets/logo-gauss.png" alt="DG Limpieza" loading="lazy">
+              <img src="assets/logo-gauss.webp" alt="DG Limpieza" loading="lazy">
             </div>
             <div class="card-info card-info-themed">
               <h3>DG Limpieza</h3>
@@ -176,7 +251,7 @@
             </div>
           </div>
           <div class="card-face card-back">
-            <iframe src="https://kikines.vercel.app/" title="Kikines" loading="lazy"></iframe>
+            <iframe data-src="https://kikines.vercel.app/" title="Kikines" loading="lazy" tabindex="-1" sandbox="allow-scripts allow-same-origin"></iframe>
           </div>
         </div>
       </a>
@@ -194,7 +269,7 @@
             </div>
           </div>
           <div class="card-face card-back">
-            <iframe src="https://bolognatravel.tur.ar/" title="Bologna Travel" loading="lazy"></iframe>
+            <iframe data-src="https://bolognatravel.tur.ar/" title="Bologna Travel" loading="lazy" tabindex="-1" sandbox="allow-scripts allow-same-origin"></iframe>
           </div>
         </div>
       </a>
@@ -212,7 +287,7 @@
             </div>
           </div>
           <div class="card-face card-back">
-            <iframe src="https://fundacionpraxis.org.ar/" title="Fundación Praxis" loading="lazy"></iframe>
+            <iframe data-src="https://fundacionpraxis.org.ar/" title="Fundación Praxis" loading="lazy" tabindex="-1" sandbox="allow-scripts allow-same-origin"></iframe>
           </div>
         </div>
       </a>
@@ -230,7 +305,7 @@
             </div>
           </div>
           <div class="card-face card-back">
-            <iframe src="https://apolosocialclub.com/" title="Apolo Producciones" loading="lazy"></iframe>
+            <iframe data-src="https://apolosocialclub.com/" title="Apolo Producciones" loading="lazy" tabindex="-1" sandbox="allow-scripts allow-same-origin"></iframe>
           </div>
         </div>
       </a>
@@ -239,6 +314,7 @@
   </section>
 
   <section id="s-about">
+    <h2 class="visually-hidden">Sobre mí</h2>
     <div class="section-tag-row">
       <span class="section-tag">ABOUT ME</span>
       <div class="section-tag-line"></div>
@@ -250,7 +326,7 @@
         <p>Sigo aprendiendo todo el tiempo — el desarrollo web no se queda quieto, y yo tampoco. Si trabajás conmigo, no coordinás a un diseñador y a un desarrollador por separado ni traducís entre los dos: hay una sola visión, de la idea al sitio funcionando.</p>
       </div>
       <div id="about-photo-wrap">
-        <img id="about-photo" src="assets/pedro-about-photo-cutout.png" alt="Foto de Pedro González" loading="lazy">
+        <img id="about-photo" src="assets/pedro-about-photo-cutout.webp" alt="Pedro González, desarrollador web y diseñador UX/UI" loading="lazy">
       </div>
     </div>
   </section>
@@ -260,7 +336,7 @@
       <span class="section-tag">CONTACT</span>
       <div class="section-tag-line"></div>
     </div>
-    <h2 id="contact-heading">Contactame</h2>
+    <h2 id="contact-heading">Contactame<span id="contact-heading-dot">.</span></h2>
     <div id="contact-divider"></div>
     <div id="contact-footer">
       <div id="contact-copy">
@@ -274,8 +350,8 @@
         </div>
         <div class="contact-col">
           <span class="contact-col-label">SOCIAL</span>
-          <a href="https://www.linkedin.com/in/pedro-gonzalez-448b94254/" target="_blank" rel="noopener" class="underline-link">LinkedIn</a>
-          <a href="https://www.instagram.com/pedro.gonzalezz1/" target="_blank" rel="noopener" class="underline-link">Instagram</a>
+          <a href="https://www.linkedin.com/in/pedro-gonzalez-448b94254/" target="_blank" rel="noopener noreferrer" class="underline-link">LinkedIn</a>
+          <a href="https://www.instagram.com/pedro.gonzalezz1/" target="_blank" rel="noopener noreferrer" class="underline-link">Instagram</a>
         </div>
       </div>
     </div>

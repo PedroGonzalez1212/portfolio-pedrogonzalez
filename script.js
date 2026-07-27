@@ -3,12 +3,14 @@
 
   const root = document.documentElement;
   const body = document.body;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- Theme toggle ---------- */
   const themeToggle = document.getElementById('theme-toggle');
   function syncThemeLabel() {
     const isDark = root.getAttribute('data-theme') !== 'light';
     themeToggle.textContent = isDark ? 'LIGHT' : 'DARK';
+    themeToggle.setAttribute('aria-pressed', String(!isDark));
   }
   themeToggle.addEventListener('click', () => {
     const isDark = root.getAttribute('data-theme') !== 'light';
@@ -20,48 +22,117 @@
   /* ---------- Menu toggle ---------- */
   const menuToggle = document.getElementById('menu-toggle');
   const menuClose = document.getElementById('menu-close');
+  const menuOverlay = document.getElementById('menu-overlay');
+
   function syncMenuLabel() {
     menuToggle.textContent = body.classList.contains('menu-open') ? 'CERRAR' : 'MENÚ';
   }
-  function toggleMenu() {
-    body.classList.toggle('menu-open');
-    syncMenuLabel();
+
+  function syncMenuA11y(isOpen) {
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    if (isOpen) {
+      menuOverlay.removeAttribute('inert');
+      menuOverlay.removeAttribute('aria-hidden');
+    } else {
+      menuOverlay.setAttribute('inert', '');
+      menuOverlay.setAttribute('aria-hidden', 'true');
+    }
   }
+
+  function getMenuFocusable() {
+    return Array.from(menuOverlay.querySelectorAll('a, button'));
+  }
+
+  function openMenu() {
+    body.classList.add('menu-open');
+    syncMenuLabel();
+    syncMenuA11y(true);
+    menuClose.focus();
+  }
+
   function closeMenu() {
+    const wasOpen = body.classList.contains('menu-open');
     body.classList.remove('menu-open');
     syncMenuLabel();
+    syncMenuA11y(false);
+    if (wasOpen) menuToggle.focus();
   }
+
+  function toggleMenu() {
+    if (body.classList.contains('menu-open')) closeMenu();
+    else openMenu();
+  }
+
   menuToggle.addEventListener('click', toggleMenu);
   menuClose.addEventListener('click', closeMenu);
+  syncMenuA11y(false);
+
+  document.addEventListener('keydown', (event) => {
+    if (!body.classList.contains('menu-open')) return;
+
+    if (event.key === 'Escape') {
+      closeMenu();
+      return;
+    }
+
+    if (event.key === 'Tab') {
+      const focusable = getMenuFocusable();
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
 
   document.querySelectorAll('.menu-row').forEach((row) => {
-    row.addEventListener('click', () => {
+    row.addEventListener('click', (event) => {
+      event.preventDefault();
       const targetId = row.getAttribute('data-target');
       const el = document.getElementById(targetId);
       closeMenu();
       if (el) {
         const y = el.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({ top: y, behavior: 'smooth' });
+        window.scrollTo({ top: y, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
       }
     });
+  });
+
+  /* ---------- Project cards: load iframe preview on demand ---------- */
+  document.querySelectorAll('.project-card').forEach((card) => {
+    const iframe = card.querySelector('.card-back iframe');
+    if (!iframe) return;
+    let loaded = false;
+    function loadPreview() {
+      if (loaded) return;
+      loaded = true;
+      iframe.src = iframe.dataset.src;
+    }
+    card.addEventListener('mouseenter', loadPreview);
+    card.addEventListener('focusin', loadPreview);
   });
 
   /* ---------- Services: active number driven by scroll ---------- */
   const serviceBlocks = document.querySelectorAll('[data-svc]');
   const numberEl = document.getElementById('services-number');
+  const ACTIVE_SERVICE_LINE_PX = 170;
   let activeIndex = -1;
   let swapTimeout = null;
 
   function updateActiveService() {
     if (!serviceBlocks.length) return;
-    const line = 170;
     let newIndex = 0;
     serviceBlocks.forEach((el, i) => {
       const rect = el.getBoundingClientRect();
-      if (rect.top <= line) newIndex = i;
+      if (rect.top <= ACTIVE_SERVICE_LINE_PX) newIndex = i;
     });
     if (newIndex !== activeIndex) {
-      if (activeIndex === -1) {
+      if (activeIndex === -1 || prefersReducedMotion) {
         activeIndex = newIndex;
         numberEl.textContent = String(newIndex + 1).padStart(2, '0');
         return;
@@ -83,6 +154,14 @@
 
   function updateProjectsIntro() {
     if (!introSection) return;
+
+    if (prefersReducedMotion) {
+      projectsTitle.style.clipPath = 'circle(72% at 50% 50%)';
+      projectsTitle.style.transform = 'scale(1)';
+      workTagWrap.style.opacity = '1';
+      return;
+    }
+
     const rect = introSection.getBoundingClientRect();
     const total = rect.height - window.innerHeight;
     let progress = total > 0 ? (-rect.top) / total : 0;
