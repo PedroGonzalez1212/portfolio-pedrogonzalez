@@ -109,9 +109,15 @@
     if (!iframe) return;
     let loaded = false;
     function loadPreview() {
-      if (loaded) return;
-      loaded = true;
-      iframe.src = iframe.dataset.src;
+      if (!loaded) {
+        loaded = true;
+        iframe.src = iframe.dataset.src;
+        iframe.addEventListener('load', () => iframe.focus(), { once: true });
+      }
+      // Cross-origin iframes on real domains only receive wheel-scroll
+      // input once focused (Chrome/Edge site-isolation quirk) — localhost
+      // dev servers don't show this, hence the mismatch after deploy.
+      iframe.focus();
     }
     card.addEventListener('mouseenter', loadPreview);
     card.addEventListener('focusin', loadPreview);
