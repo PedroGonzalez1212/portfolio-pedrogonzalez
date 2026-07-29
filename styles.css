@@ -651,45 +651,11 @@ body.menu-open .menu-row:nth-child(5) { transition-delay: .28s; }
   text-decoration: none;
 }
 
-.project-card.no-flip {
-  cursor: pointer;
-}
-
 .card-visual {
-  perspective: 2200px;
-  position: relative;
-}
-
-.card-inner {
   position: relative;
   aspect-ratio: 4 / 5;
-  transform-style: preserve-3d;
-  transition: transform .8s cubic-bezier(.22, 1, .36, 1);
-  transform: rotateY(0deg);
-}
-
-.project-card:not(.no-flip):hover .card-inner {
-  transform: rotateY(180deg);
-}
-
-.card-inner-static {
-  transform-style: flat;
   display: flex;
   flex-direction: column;
-}
-
-.card-face {
-  position: absolute;
-  inset: 0;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.card-inner-static .card-face {
-  position: static;
-  flex: 1;
 }
 
 .card-logo {
@@ -740,19 +706,6 @@ body.menu-open .menu-row:nth-child(5) { transition-delay: .28s; }
 .card-info-themed .card-type { color: var(--projects-sub); }
 .card-info-themed h3 { transition: color .25s ease; }
 .project-card:hover .card-info-themed h3 { color: var(--projects-accent); }
-
-.card-back {
-  transform: rotateY(180deg);
-  background: #111111;
-  overflow: hidden;
-}
-
-.card-back iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  pointer-events: auto;
-}
 
 /* ===== About ===== */
 #s-about {

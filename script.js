@@ -103,20 +103,6 @@
     });
   });
 
-  /* ---------- Project cards: load iframe preview on demand ---------- */
-  document.querySelectorAll('.project-card').forEach((card) => {
-    const iframe = card.querySelector('.card-back iframe');
-    if (!iframe) return;
-    let loaded = false;
-    function loadPreview() {
-      if (loaded) return;
-      loaded = true;
-      iframe.src = iframe.dataset.src;
-    }
-    card.addEventListener('mouseenter', loadPreview);
-    card.addEventListener('focusin', loadPreview);
-  });
-
   /* ---------- Services: active number driven by scroll ---------- */
   const serviceBlocks = document.querySelectorAll('[data-svc]');
   const numberEl = document.getElementById('services-number');
